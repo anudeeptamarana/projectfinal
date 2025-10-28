@@ -55,11 +55,11 @@
 		<version>5.2.5</version>
 	</dependency>
 	
-	<dependency>
+	<!--<dependency>
 		 <groupId>cognizant</groupId>
 	 	 <artifactId>selenium</artifactId>
 	 	 <version>0.0.1-SNAPSHOT</version>
-	</dependency>
+	</dependency>-->
 	
 	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 	<dependency>

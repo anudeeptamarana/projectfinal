@@ -58,7 +58,12 @@ public class SearchResultsPage {
     	//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", level);
         level.click();
     	beginnerOption.click();
-    	//view.click();
+    	try {
+    	view.click();
+    	}
+    	catch(Exception e) {
+    		
+    	}
     	
     }
     
@@ -67,7 +72,11 @@ public class SearchResultsPage {
     	//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", language);
         language.click();
     	englishOption.click();
-    	//view.click();
+    	try {
+        	view.click();
+        }
+        catch(Exception e) {
+        }
     	
     }
     
