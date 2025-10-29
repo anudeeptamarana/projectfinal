@@ -16,7 +16,7 @@ public class DriverSet {
     protected static LangLearningPage langPage;
     protected static EnterprisePage eppage;
 
-	    @BeforeSuite
+	    @BeforeTest
 	    public void setup() {
 	        WebDriverManager.chromedriver().setup();
 	        driver = new ChromeDriver();
