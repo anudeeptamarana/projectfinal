@@ -1,10 +1,14 @@
 package cognizant.project;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -16,6 +20,9 @@ import org.testng.annotations.BeforeTest;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import reports.ExtentReportManager;
+
+
 public class DriverSet {
 
 		protected static WebDriver driver;
@@ -24,18 +31,17 @@ public class DriverSet {
 	    protected static LangLearningPage langPage;
 	    protected static EnterprisePage eppage;
 	    protected static ExtentReports extent;
-	    protected static ExtentTest test;
+	    protected ExtentTest test;
 
+	       @BeforeSuite
+	       public void setupExtentReport() {
+	           extent = ExtentReportManager.createReport();
+	       }
 
-//	     @BeforeSuite
-//	      public void setupReport() {
-//	          extent = ExtentReportManager.createReport();
-//	      }
-//
-//	      @AfterSuite
-//	      public void tearDownReport() {
-//	          extent.flush();
-//	      }
+	       @AfterSuite
+	       public void flushExtentReport() {
+	           extent.flush();
+	       }
 
    
 	    @BeforeTest
@@ -73,9 +79,12 @@ public class DriverSet {
 
 	    }
 	    
+	    
+	    
 	    @AfterTest
 	    public void tearDown() {
 	        driver.quit();
 	    }
+	    
 
 }
