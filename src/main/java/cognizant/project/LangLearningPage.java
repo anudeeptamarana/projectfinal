@@ -4,7 +4,6 @@ package cognizant.project;
 import java.time.Duration;
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LangLearningPage {
     WebDriver driver;
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     
     @FindBy(xpath = "(//span[@class=\"cds-button-label\"])[2]")
     WebElement exploreButton ;
@@ -43,6 +43,10 @@ public class LangLearningPage {
     
     public void langLearn() {
     	exploreButton.click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(langLearnOption));
+		//langLearnOption.click()
+
     	langLearnOption.click();
     }
     

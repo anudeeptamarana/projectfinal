@@ -6,7 +6,6 @@
           <class name="cognizant.project.CourseSearchTest"/>
           <class name="cognizant.project.LangLearningTest"/>
           <class name="cognizant.project.EnterpriseTest"/>
-
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

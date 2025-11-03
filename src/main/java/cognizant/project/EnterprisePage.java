@@ -1,33 +1,4 @@
 package cognizant.project;
-//import org.openqa.selenium.JavascriptExecutor;
-//import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.support.FindBy;
-//import org.openqa.selenium.support.PageFactory;
-//
-//public class EnterprisePage {
-//    WebDriver driver;
-//
-//    @FindBy(xpath = "(//li[@class=\"css-1dswftd\"]/a)[2]")
-//    WebElement enterpriseButton;
-//    
-//    @FindBy(id = "mktoForm_2666")
-//    WebElement inputForm;
-//    
-//   
-//
-//    public EnterprisePage(WebDriver driver) {
-//        this.driver = driver;
-//        PageFactory.initElements(driver, this);
-//    }
-//    
-//    public void enterPrise() {
-//    	//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", enterpriseButton);
-//    	((JavascriptExecutor) driver).executeScript("arguments[0].click();", enterpriseButton);
-//    	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",inputForm);
-//    	
-//    }
-//}
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -95,7 +66,7 @@ public class EnterprisePage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", enterpriseButton);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", inputForm);
     }
-
+    
 
     public void fillForm(String firstName, String lastName, String email, String phone,String organisationT,
                      String title, String companyName, String companySize,
@@ -135,14 +106,8 @@ public class EnterprisePage {
 
     public void submitForm() {
     	((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitButton);
+    	System.out.println("\nThe Entered Mail is Wrong!!!\n-------------------");
     	System.out.println(errorMsg.getText());
     }
 
-//    public String getErrorMessage() {
-//        try {
-//            return errorMessage.getText();
-//        } catch (NoSuchElementException e) {
-//            return "No error message found.";
-//        }
-//    }
 }
